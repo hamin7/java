@@ -1,21 +1,61 @@
+package bank;
 
 public class Account
 {
     String owner;     //사용자 이름
-    int id;           // 계좌
-    int balance;      // 잔액
-    public Account() {}      // 기본 생성자
-
+    private int id;           // 계좌
+    private int balance;      // 잔액
+    
+    // toString
+    @Override
+    public String toString()
+    {
+    	        return "Account [Account Number = " + id ", Owner=" + owner + ", Balance=" + balance + "]";
+    }
+    
+    // 기본 생성
+    public Account() 
+    {
+    super();
+    }
     // 메뉴의 Source -> Generate Constructor using Fields 들어가서 한 번에 생성할 수 있음.
 
-    public Account(String n,int id,int b)
+    public Account(int id,String owner,int balance)
     {
-            owner=n;
-            id=id;
-            balance=b;
+            this.owner=owner;
+            this.id=id;
+            this.balance=balance;
         }
-} // end class
 
+	public String getOwner() {
+		return owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getBalance() {
+		return balance;
+	}
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+    
+}
+
+
+
+/*
 class create_account extends Account
 {
     create_account(String n,int id,int b)
@@ -55,3 +95,4 @@ class create_account extends Account
         }
 
 } // end class
+*/
