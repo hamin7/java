@@ -5,15 +5,15 @@ public class Account
     String owner;     //사용자 이름
     private int id;           // 계좌
     private int balance;      // 잔액
-    
+
     // toString
     @Override
     public String toString()
     {
     	        return "Account [Account Number=" +id + ", Owner=" + owner + ", Balance=" + balance + "]";
     }
-    
-    
+
+
     // 기본 생성자
     public Account()
     {
@@ -52,7 +52,7 @@ public class Account
 	public void setBalance(int balance) {
 		this.balance = balance;
 	}
-    
+
 }
 
 
