@@ -12,12 +12,12 @@ public class Bank_Manager
       Scanner in = new Scanner(System.in);
       
       String user_name=null;
-      int tmp=0, tmp1=0, tmp2=0;
-      int withd=0, cb=0, send = 0;
+      //int tmp=0, tmp1=0, tmp2=0;
+      //int withd=0, cb=0, send = 0;
       int i;
       i = accountCount;
       
-      Scanner string =new Scanner(System.in);
+      //Scanner string =new Scanner(System.in);
       int userChoice = 0;
       boolean quit = false;
 
@@ -44,12 +44,13 @@ public class Bank_Manager
                 		  // deposite();
                 		  break;
                     
-
                   case 3: // withdraw money
                      
                         break;
-
-
+                       
+                  case 4 : // send money
+                	  
+                	  
                   case 5: // check balance
 
                      
@@ -92,50 +93,24 @@ public class Bank_Manager
 		//i++;
 	}
 	
-	/*
+	
 	private static void deposite()
 	{
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter your account Number : ");
         int id = in.nextInt();
-        //tmp=in.nextInt();
-        if(tmp==user.id)
-     {
-     System.out.print("Enter Amount Of Money : ");
-     balance=in.nextInt();
-     user.balance=balance;
-     System.out.println("\t Successfully Deposited.");
-     }
-         else
-        System.out.println("Wrong Accoount Number.");
+        System.out.print("How much do you want to deposite? : ");
+        int deposite = Integer.parseInt(in.nextLine());   // ****************
+        Account a = new Account();
+        a = searchAccount(id);
+        
 	}
 	
 	private static void withdraw()
 	{
-		System.out.print("Enter your account Number : ");
-        tmp=in.nextInt();
-
-            if(tmp==user.id){
-               if(user.balance==0)
-               System.out.print("Your Account is Empty.");
-
-               else{
-               System.out.print("Enter Amout Of Money : ");
-               withd=in.nextInt();
-
-               if(withd>user.balance){
-               System.out.print("Enter Valid Amout of Money : ");
-               withd=in.nextInt();
-               }
-               else
-               cb= user.withdraw(withd);
-               System.out.println("Your Current Balance : "+cb);
-               }
-            }
-               else
-               System.out.println("Wrong Accoount Number.");
+		
 	}
-	*/
+	
 	
 	private static void send()
 	{
@@ -168,7 +143,7 @@ public class Bank_Manager
 	}
 	*/
 	
-	/*
+	
 	private Account searchAccount(int id)      // 계좌 탐색 함수
 	{
 		for (int i = 0; i < accounts.size(); i++)
@@ -176,7 +151,7 @@ public class Bank_Manager
 			if (accounts.get(i).getId().equals(id))
 				return accounts.get(i);
 		}
+		return null;
 	}
-	*/
 	
 }
