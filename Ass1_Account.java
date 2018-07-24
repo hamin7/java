@@ -10,13 +10,14 @@ public class Account
     @Override
     public String toString()
     {
-    	        return "Account [Account Number = " + id ", Owner=" + owner + ", Balance=" + balance + "]";
+    	        return "Account [Account Number=" +id + ", Owner=" + owner + ", Balance=" + balance + "]";
     }
     
-    // 기본 생성
-    public Account() 
+    
+    // 기본 생성자
+    public Account()
     {
-    super();
+    	super();
     }
     // 메뉴의 Source -> Generate Constructor using Fields 들어가서 한 번에 생성할 수 있음.
 
@@ -27,6 +28,7 @@ public class Account
             this.balance=balance;
         }
 
+    // Getter & Setter
 	public String getOwner() {
 		return owner;
 	}
