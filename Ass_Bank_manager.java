@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 public class Bank_Manager
 {
+	static Account[] accounts = new Account[100];
+	static int accountCount = 0;     // Account배열의 인덱스랄까,,,
+	
 	public static void main(String args[])
     {
-      Account[] accounts = new Account[100];
       int accountCount = 0;     // Account배열의 인덱스랄까,,,
 
       Scanner in = new Scanner(System.in);
@@ -72,8 +74,8 @@ public class Bank_Manager
 		int i;
 	    i = accountCount;
 		
-	    Account[] accounts = new Account[100];
-		accounts[i] = new Account();
+	    //Account[] accounts = new Account[100];
+		//accounts[i] = new Account();
 		
 		int aNumber = 0;
 		aNumber = (int)((Math.random() * 9000) + 1000);
@@ -85,13 +87,12 @@ public class Bank_Manager
 		int balance = Integer.parseInt(in.nextLine());
 		
 		Account account = new Account(id, owner, balance);     //***********************
-	
+		accounts [accountCount++] = account;
+		
 		System.out.print("Your Account Number is : " + aNumber);
 		
 		System.out.println("\nCreating Account complete\n");
 		System.out.println("**************************");
-		
-		i++;
 	}
 
 
@@ -245,7 +246,7 @@ public class Bank_Manager
 	
 	private static Account searchAccount(int id)      // 계좌 탐색 함수
 	{	
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < accountCount; j++)
 		{
 			if ( accounts[j].getId()==id)
 				return accounts[j];
