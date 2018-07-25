@@ -12,7 +12,11 @@ public class Bank_Manager
       Scanner in = new Scanner(System.in);
 
       String user_name=null;
-      
+      //int tmp=0, tmp1=0, tmp2=0;
+      //int withd=0, cb=0, send = 0;
+
+
+      //Scanner string =new Scanner(System.in);
       int userChoice = 0;
       boolean quit = false;
 
@@ -70,11 +74,11 @@ public class Bank_Manager
 		Scanner in = new Scanner(System.in);
 		int accountCount = 0;
 		int i;
-	    i = accountCount;
-		
+	  i = accountCount;
+
 	    Account[] accounts = new Account[100];
 		accounts[i] = new Account();
-		
+
 		int aNumber = 0;
 		aNumber = (int)((Math.random() * 9000) + 1000);
 		int id = aNumber;
@@ -83,13 +87,17 @@ public class Bank_Manager
 		String owner = in.nextLine();
 		System.out.print("Give me your money : ");
 		int balance = Integer.parseInt(in.nextLine());
-		
+		//user_name=string.nextLine();
+		//user.insert(user_name, aNumber);  // inserted
+		//accountList.add(account);
+
 		Account account = new Account(id, owner, balance);     //***********************
-		
-		
+
+
 		System.out.println("\n\tYour Account Details\n\tDont Forget Account Number\n");
 		System.out.println("**************************");
-		
+		//user.display_details();
+
 		i++;
 	}
 
@@ -208,7 +216,7 @@ public class Bank_Manager
 		}
 	}
 
-	
+
 	private static void check_balance()
 	{
 		Scanner in = new Scanner(System.in);
@@ -221,15 +229,15 @@ public class Bank_Manager
 			if (a != null)
 			{
 				a.setBalance(a.getBalance());
-				System.out.println("Current Balance : " + a.getBalance());				
-			} else 
+				System.out.println("Current Balance : " + a.getBalance());
+			} else
 				throw new NoAccountException ();
 		} catch (NoAccountException n)
 		{
 			n.printStackTrace();
 		}
 	}
-	
+
 
 	/*
 	private static void Display_Balance()
@@ -246,16 +254,10 @@ public class Bank_Manager
 
 	private static Account searchAccount(int id)      // 계좌 탐색 함수
 	{
-		int accountCount = 0;
-		int i;
-		i = accountCount;
-		Account[] accounts = new Account[100];
-		accounts[i] = new Account();
-		
-		for (int j = 0; j < 100; j++)
+		for (int i = 0; i < 100; i++)
 		{
-			if (accounts[j].getId().equals(id))
-				return accounts[j];
+			if (accounts[i].get(i).getId().equals(id))
+				return accounts[i].get(i);
 		}
 		return null;
 	}
