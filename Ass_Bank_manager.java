@@ -244,13 +244,7 @@ public class Bank_Manager
 
 	
 	private static Account searchAccount(int id)      // 계좌 탐색 함수
-	{
-		int accountCount = 0;
-		int i;
-		i = accountCount;
-		Account[] accounts = new Account[100];
-		accounts[i] = new Account();
-		
+	{	
 		for (int j = 0; j < 100; j++)
 		{
 			if ( accounts[j].getId()==id)
