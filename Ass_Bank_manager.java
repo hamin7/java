@@ -9,11 +9,8 @@ public class Bank_Manager
 	
 	public static void main(String args[])
     {
-      int accountCount = 0;     // Account배열의 인덱스랄까,,,
 
       Scanner in = new Scanner(System.in);
-
-      String user_name=null;
       
       int userChoice = 0;
       boolean quit = false;
@@ -71,8 +68,6 @@ public class Bank_Manager
 	{
 		Scanner in = new Scanner(System.in);
 		int accountCount = 0;
-		int i;
-	    i = accountCount;
 		
 	    //Account[] accounts = new Account[100];
 		//accounts[i] = new Account();
@@ -81,27 +76,26 @@ public class Bank_Manager
 		aNumber = (int)((Math.random() * 9000) + 1000);
 		int id = aNumber;
 
-		System.out.print("Enter your Name : ");
+		System.out.println("Enter your Name : ");
 		String owner = in.nextLine();
-		System.out.print("Give me your money : ");
+		System.out.println("Give me your money : ");
 		int balance = Integer.parseInt(in.nextLine());
 		
 		Account account = new Account(id, owner, balance);     //***********************
 		accounts [accountCount++] = account;
 		
-		System.out.print("Your Account Number is : " + aNumber);
+		System.out.println("Your Account Number is : " + aNumber);
 		
 		System.out.println("\nCreating Account complete\n");
 		System.out.println("**************************");
 	}
 
-
 	private static void deposite()
 	{
 		Scanner in = new Scanner(System.in);
-		System.out.print("Enter your account Number : ");
+		System.out.println("Enter your account Number : ");
         int id = in.nextInt();
-        System.out.print("How much do you want to deposite? : ");
+        System.out.println("How much do you want to deposite? : ");
         int money = Integer.parseInt(in.nextLine());   // ****************
         Account a = new Account();
         a = searchAccount(id);
@@ -131,9 +125,9 @@ public class Bank_Manager
 	private static void withdraw()
 	{
 		Scanner in = new Scanner(System.in);
-		System.out.print("Enter your account Number : ");
+		System.out.println("Enter your account Number : ");
 		int id = in.nextInt();
-		System.out.print("How much do you want to withdraw?: ");
+		System.out.println("How much do you want to withdraw?: ");
 		int money = Integer.parseInt(in.nextLine());
 		Account a = new Account();
 		a = searchAccount(id);
@@ -173,11 +167,11 @@ public class Bank_Manager
 	private static void send()
 	{
 		Scanner in = new Scanner(System.in);
-		System.out.print("Write the withdrawal balance id: ");
+		System.out.println("Write the withdrawal balance id: ");
 		int id = in.nextInt();
-		System.out.print("Write the deposite balance id: ");
+		System.out.println("Write the deposite balance id: ");
 		int id2 = in.nextInt();
-		System.out.print("How much do you want to send? ");
+		System.out.println("How much do you want to send? ");
 		int money = Integer.parseInt(in.nextLine());
 		Account a = new Account();
 		Account b = new Account();
@@ -214,7 +208,7 @@ public class Bank_Manager
 	private static void check_balance()
 	{
 		Scanner in = new Scanner(System.in);
-		 System.out.print("Enter your Account Number : ");
+		 System.out.println("Enter your Account Number : ");
          int id = in.nextInt();
          Account a = new Account();
          a = searchAccount(id);
@@ -232,15 +226,13 @@ public class Bank_Manager
 		}
 	}
 	
-
-	
 	private static void Display_Balance()
 	{
-		Scanner in = new Scanner(System.in);
-		System.out.print("Enter your Account Number : ");
-		int id = in.nextInt();
-		Account a = new Account();
-		a = searchAccount(id);
+		//Scanner in = new Scanner(System.in);
+		System.out.println("Enter your Account Number : ");
+		//int id = in.nextInt();
+		//Account a = new Account();
+		//a = searchAccount(id);
 	}
 
 	
