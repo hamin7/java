@@ -76,8 +76,8 @@ public class Bank_Manager
 		//int id = aNumber;
 		
 		System.out.println("Enter your Account address: ");
-		//int id = in.nextInt();
-		int id = Integer.parseInt(in.nextLine());
+		String id = in.nextLine();
+		//int id = Integer.parseInt(in.nextLine());
 
 		System.out.println("Enter your Name : ");
 		String owner = in.nextLine();
@@ -97,7 +97,7 @@ public class Bank_Manager
 	{
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter your account Number : ");
-        int id = in.nextInt();
+        String id = in.nextLine();
         System.out.println("How much do you want to deposite? : ");
         int money = Integer.parseInt(in.nextLine());   // ****************
         Account a = new Account();
@@ -129,7 +129,7 @@ public class Bank_Manager
 	{
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter your account Number : ");
-		int id = in.nextInt();
+		String id = in.nextLine();
 		System.out.println("How much do you want to withdraw?: ");
 		int money = Integer.parseInt(in.nextLine());
 		Account a = new Account();
@@ -171,9 +171,9 @@ public class Bank_Manager
 	{
 		Scanner in = new Scanner(System.in);
 		System.out.println("Write the withdrawal balance id: ");
-		int id = in.nextInt();
+		String id = in.nextLine();
 		System.out.println("Write the deposite balance id: ");
-		int id2 = in.nextInt();
+		String id2 = in.nextLine();
 		System.out.println("How much do you want to send? ");
 		int money = Integer.parseInt(in.nextLine());
 		Account a = new Account();
@@ -212,7 +212,7 @@ public class Bank_Manager
 	{
 		Scanner in = new Scanner(System.in);
 		 System.out.println("Enter your Account Number : ");
-         int id = in.nextInt();
+         String id = in.nextLine();
          Account a = new Account();
          a = searchAccount(id);
 		try
@@ -229,7 +229,7 @@ public class Bank_Manager
 		}
 	}
 	
-	private static Account searchAccount(int id)      // 계좌 탐색 함수
+	private static Account searchAccount(String id)      // 계좌 탐색 함수
 	{	
 		for (int j = 0; j < accountCount; j++)
 		{
