@@ -3,7 +3,7 @@ package bank;
 public class Account
 {
     String owner;     //사용자 이름
-    private int id;           // 계좌
+    private String id;           // 계좌
     private int balance;      // 잔액
 
     // toString
@@ -21,7 +21,7 @@ public class Account
     }
     // 메뉴의 Source -> Generate Constructor using Fields 들어가서 한 번에 생성할 수 있음.
 
-    public Account(int id,String owner,int balance)
+    public Account(String id,String owner,int balance)
     {
             this.owner=owner;
             this.id=id;
@@ -37,11 +37,11 @@ public class Account
 		this.owner = owner;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
