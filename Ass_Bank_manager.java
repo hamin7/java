@@ -22,7 +22,6 @@ public class Bank_Manager
                   System.out.println("3. Withdraw money");
                   System.out.println("4. Send money");
                   System.out.println("5. Check balance");
-                  System.out.println("6. Display Account Details");
                   System.out.println("0. to quit: \n");
                   System.out.print("Enter Your Choice : ");
                   userChoice = in.nextInt();
@@ -225,16 +224,6 @@ public class Bank_Manager
 			n.printStackTrace();
 		}
 	}
-/*
-	private static void Display_Balance()
-	{
-		//Scanner in = new Scanner(System.in);
-		System.out.println("Enter your Account Number : ");
-		//int id = in.nextInt();
-		//Account a = new Account();
-		//a = searchAccount(id);
-	}
-*/
 	
 	private static Account searchAccount(int id)      // 계좌 탐색 함수
 	{	
