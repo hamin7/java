@@ -117,13 +117,7 @@ public class Bank_Manager
         }
 	}
 
-	public static class NoAccountException extends Exception
-	{
-		public NoAccountException()
-		{
-			System.out.println("Wrong Account");
-		}
-	}
+	
 
 	private static void withdraw()
 	{
@@ -159,13 +153,7 @@ public class Bank_Manager
 		}
 	}
 
-	public static class NoMoneyException extends Exception
-	{
-		public NoMoneyException()
-		{
-			System.out.println("You have not enough money");
-		}
-	}
+	
 
 	private static void send()
 	{
