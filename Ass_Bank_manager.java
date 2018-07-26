@@ -71,9 +71,13 @@ public class Bank_Manager
 	    //Account[] accounts = new Account[100];
 		//accounts[i] = new Account();
 		
-		int aNumber = 0;
-		aNumber = (int)((Math.random() * 9000) + 1000);
-		int id = aNumber;
+		//int aNumber = 0;
+		//aNumber = (int)((Math.random() * 9000) + 1000);
+		//int id = aNumber;
+		
+		System.out.println("Enter your Account address: ");
+		//int id = in.nextInt();
+		int id = Integer.parseInt(in.nextLine());
 
 		System.out.println("Enter your Name : ");
 		String owner = in.nextLine();
@@ -83,7 +87,7 @@ public class Bank_Manager
 		Account account = new Account(id, owner, balance);     //***********************
 		accounts [accountCount++] = account;
 		
-		System.out.println("Your Account Number is : " + aNumber);
+		System.out.println("Your Account Number is : " + id);
 		
 		System.out.println("\nCreating Account complete\n");
 		System.out.println("**************************");
