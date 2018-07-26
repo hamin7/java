@@ -225,7 +225,7 @@ public class Bank_Manager
 			n.printStackTrace();
 		}
 	}
-	
+/*
 	private static void Display_Balance()
 	{
 		//Scanner in = new Scanner(System.in);
@@ -234,7 +234,7 @@ public class Bank_Manager
 		//Account a = new Account();
 		//a = searchAccount(id);
 	}
-
+*/
 	
 	private static Account searchAccount(int id)      // 계좌 탐색 함수
 	{	
@@ -245,5 +245,4 @@ public class Bank_Manager
 		}
 		return null;
 	}
-	
 }
