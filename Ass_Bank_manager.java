@@ -66,7 +66,6 @@ public class Bank_Manager
 	private static void create_account()
 	{
 		Scanner in = new Scanner(System.in);
-		int accountCount = 0;
 		
 	    //Account[] accounts = new Account[100];
 		//accounts[i] = new Account();
