@@ -60,7 +60,7 @@ public class Bank_Manager
                   }
                   System.out.println("\n");
             } while (!quit);
-            System.out.println("I love Hyundori ♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥️️!");
+            System.out.println("Thanks!");
             }
 
 	private static void create_account()
