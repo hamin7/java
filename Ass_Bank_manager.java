@@ -220,7 +220,7 @@ public class Bank_Manager
 	{	
 		for (int j = 0; j < accountCount; j++)
 		{
-			if ( accounts[j].getId() == id )
+			if ( accounts[j].getId().equals("id"))
 				return accounts[j];
 		}
 		return null;
