@@ -6,12 +6,12 @@ public class Bank_Manager
 {
 	static Account[] accounts = new Account[100];
 	static int accountCount = 0;     // Account배열의 인덱스랄까,,,
-	
+
 	public static void main(String args[])
     {
 
       Scanner in = new Scanner(System.in);
-      
+
       int userChoice = 0;
       boolean quit = false;
 
@@ -60,20 +60,20 @@ public class Bank_Manager
                   }
                   System.out.println("\n");
             } while (!quit);
-            System.out.println("Thanks !");
+            System.out.println("I love Hyundori ♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥️️!");
             }
 
 	private static void create_account()
 	{
 		Scanner in = new Scanner(System.in);
-		
+
 	    //Account[] accounts = new Account[100];
 		//accounts[i] = new Account();
-		
+
 		//int aNumber = 0;
 		//aNumber = (int)((Math.random() * 9000) + 1000);
 		//int id = aNumber;
-		
+
 		System.out.println("Enter your Account address: ");
 		String id = in.nextLine();
 		//int id = Integer.parseInt(in.nextLine());
@@ -82,12 +82,12 @@ public class Bank_Manager
 		String owner = in.nextLine();
 		System.out.println("Give me your money : ");
 		int balance = Integer.parseInt(in.nextLine());
-		
+
 		Account account = new Account(id, owner, balance);     //***********************
 		accounts [accountCount++] = account;
-		
+
 		System.out.println("Your Account Number is : " + id);
-		
+
 		System.out.println("\nCreating Account complete\n");
 		System.out.println("**************************");
 	}
@@ -101,6 +101,14 @@ public class Bank_Manager
         int money = Integer.parseInt(in.nextLine());   // ****************
         Account a = new Account();
         a = searchAccount(id);
+				if (a != null)
+				{
+					a.setBalance(a.getBalance() + money);
+	        System.out.println("Current Balance: " + a.getBalance());
+	        System.out.println("Deposite is success. ");
+				}
+
+        /*
         try
         {
         	if (a != null)
@@ -114,9 +122,10 @@ public class Bank_Manager
         {
         	e.printStackTrace();
         }
+        */
 	}
 
-	
+
 
 	private static void withdraw()
 	{
@@ -127,6 +136,14 @@ public class Bank_Manager
 		int money = Integer.parseInt(in.nextLine());
 		Account a = new Account();
 		a = searchAccount(id);
+		if (a != null)
+		{
+			a.setBalance(a.getBalance() - money);
+			System.out.println("Current Balance : " + a.getBalance());
+			System.out.println("Withdrawal is succeed. ");
+		}
+
+		/*
 		try
 		{
 			if (a != null)
@@ -150,9 +167,10 @@ public class Bank_Manager
 		{
 			e.printStackTrace();
 		}
+		*/
 	}
 
-	
+
 
 	private static void send()
 	{
@@ -168,6 +186,14 @@ public class Bank_Manager
 		a = searchAccount(id);
 		b = searchAccount(id2);
 
+		if (a != null && b != null)
+		{
+			a.setBalance(a.getBalance() - money);
+			b.setBalance(b.getBalance() + money);
+			System.out.println("Money send complete.");
+		}
+
+		/*
 		try
 		{
 			if (a != null && b != null)
@@ -192,36 +218,47 @@ public class Bank_Manager
 		{
 			e.printStackTrace();
 		}
+		*/
 	}
 
-	
+
 	private static void check_balance()
 	{
 		Scanner in = new Scanner(System.in);
-		 System.out.println("Enter your Account Number : ");
-         String id = in.nextLine();
-         Account a = new Account();
-         a = searchAccount(id);
+		System.out.println("Enter your Account Number : ");
+        String id = in.nextLine();
+        Account a = new Account();
+        a = searchAccount(id);
+        if (a != null)
+        {
+			a.setBalance(a.getBalance());
+			System.out.println("Current Balance : " + a.getBalance());
+		}
+
+
+
+         /*
 		try
 		{
 			if (a != null)
 			{
 				a.setBalance(a.getBalance());
-				System.out.println("Current Balance : " + a.getBalance());				
-			} else 
+				System.out.println("Current Balance : " + a.getBalance());
+			} else
 				throw new NoAccountException ();
 		} catch (NoAccountException n)
 		{
 			n.printStackTrace();
 		}
+		*/
 	}
-	
+
 	private static Account searchAccount(String id)      // 계좌 탐색 함수
-	{	
-		for (int j = 0; j < accountCount; j++)
+	{
+		for (int i = 0; i < accountCount; i++)
 		{
-			if ( accounts[j].getId().equals("id"))
-				return accounts[j];
+			if ( accounts[i].getId().equals(id))
+				return accounts[i];
 		}
 		return null;
 	}
