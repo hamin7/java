@@ -63,6 +63,16 @@ public class Bank_Manager
             System.out.println("Thanks!");
             }
 
+	private void interestFunc() {
+		System.out.print("계좌번호를 입력하세요: ");
+		String id = s.nextLine();
+		Account acc = new Account();
+		acc = searchAccount(id);
+		try {
+			new Thread(new InterestThread(acc)).start();
+		} catch(NullPointerException e) {
+			e.printStackTrace();
+		}
 	private static void create_account()
 	{
 		Scanner in = new Scanner(System.in);
