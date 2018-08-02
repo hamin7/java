@@ -60,19 +60,24 @@ public class Bank_Manager
                   }
                   System.out.println("\n");
             } while (!quit);
-            System.out.println("Thanks!");
+            System.out.println("Thanks !");
             }
 
-	private void interestFunc() {
-		System.out.print("계좌번호를 입력하세요: ");
+	private void interestFunc()
+	{
+		System.out.print("Write the account number: ");
 		String id = s.nextLine();
 		Account acc = new Account();
 		acc = searchAccount(id);
-		try {
-			new Thread(new InterestThread(acc)).start();
-		} catch(NullPointerException e) {
+		try
+		{
+			new Thread(new InterestTread(acc)).start();
+		} catch (NullPointerException e)
+		{
 			e.printStackTrace();
 		}
+	}
+
 	private static void create_account()
 	{
 		Scanner in = new Scanner(System.in);
@@ -235,15 +240,15 @@ public class Bank_Manager
 	private static void check_balance()
 	{
 		Scanner in = new Scanner(System.in);
-		System.out.println("Enter your Account Number : ");
-        String id = in.nextLine();
-        Account a = new Account();
-        a = searchAccount(id);
-        if (a != null)
-        {
-			a.setBalance(a.getBalance());
-			System.out.println("Current Balance : " + a.getBalance());
-		}
+		 System.out.println("Enter your Account Number : ");
+         String id = in.nextLine();
+         Account a = new Account();
+         a = searchAccount(id);
+				 if (a != null)
+				 {
+					 a.setBalance(a.getBalance());
+	         System.out.println("Current Balance : " + a.getBalance());
+				 }
 
 
 
@@ -265,11 +270,17 @@ public class Bank_Manager
 
 	private static Account searchAccount(String id)      // 계좌 탐색 함수
 	{
-		for (int i = 0; i < accountCount; i++)
+		for (int j = 0; j < accountCount; j++)
 		{
-			if ( accounts[i].getId().equals(id))
-				return accounts[i];
+			if ( accounts[j].getId().equals("id"))
+				return accounts[j];
 		}
 		return null;
 	}
 }
+다른약속을 잡아놓고 남은 시간에 만나라는건 1순위가 아니라는 거잖
+좋은사람인데 연애에 있어서는 둔한
+통보식
+담부터는 미리좀 물어봐주지
+왜 달달볶겠냐
+신뢰를 쌓을려는 노력은 해봤어?
