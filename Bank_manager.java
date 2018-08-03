@@ -66,12 +66,12 @@ public class Bank_Manager
 	private void interestFunc()
 	{
 		System.out.print("Write the account number: ");
-		String id = s.nextLine();
+		String id = in.nextLine();
 		Account acc = new Account();
 		acc = searchAccount(id);
 		try
 		{
-			new Thread(new InterestTread(acc)).start();
+			new Thread(new InterestThread(acc)).start();
 		} catch (NullPointerException e)
 		{
 			e.printStackTrace();
