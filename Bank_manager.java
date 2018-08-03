@@ -65,6 +65,7 @@ public class Bank_Manager
 
 	private void interestFunc()
 	{
+		Scanner in = new Scanner(System.in);
 		System.out.print("Write the account number: ");
 		String id = in.nextLine();
 		Account acc = new Account();
