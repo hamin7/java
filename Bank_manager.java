@@ -1,5 +1,4 @@
-package bank;
-
+package bank
 import java.util.Scanner;
 
 public class Bank_Manager
