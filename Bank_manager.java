@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Bank_Manager
 {
 	static Account[] accounts = new Account[100];
-	static int accountCount = 0;     // Account배열의 인덱스랄까,,,
+	static int accountCount = 0;     // Account배열의 인덱스랄까
 
 	public static void main(String args[])
     {
