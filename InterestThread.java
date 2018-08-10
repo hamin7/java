@@ -7,11 +7,8 @@ public class InterestThread implements Runnable
   {
     this.account = account;
   }
-  @Override
   public void run()
   {
-    while(true)
-    {
       try
       {
         Thread.sleep(1000);
@@ -20,6 +17,8 @@ public class InterestThread implements Runnable
         e.printStackTrace();
       }
       account.interest();
-    }
+    
   }
 }
+
+//while(true)가 
