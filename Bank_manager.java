@@ -241,7 +241,7 @@ public class Bank_Manager
 	private static void check_balance()
 	{
 		Scanner in = new Scanner(System.in);
-		 System.out.println("Enter your Account Number : ");
+		System.out.println("Enter your Account Number : ");
          String id = in.nextLine();
          Account a = new Account();
          a = searchAccount(id);
