@@ -54,7 +54,7 @@ public class Account
 	}
 	public void interest()
 	{
-		balance *= 1.1;
+		balance *= 1.05;
 	}
 
 }
