@@ -21,6 +21,7 @@ public class Bank_Manager
 	                  System.out.println("3. Withdraw money");
 	                  System.out.println("4. Send money");
 	                  System.out.println("5. Check balance");
+	                  System.out.println("6. Add interest");
 	                  System.out.println("0. to quit: \n");
 	                  System.out.print("Enter Your Choice : ");
 	                  userChoice = in.nextInt();
