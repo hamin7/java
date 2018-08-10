@@ -242,14 +242,14 @@ public class Bank_Manager
 	{
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter your Account Number : ");
-         String id = in.nextLine();
-         Account a = new Account();
-         a = searchAccount(id);
-				 if (a != null)
-				 {
-					 a.setBalance(a.getBalance());
-	         System.out.println("Current Balance : " + a.getBalance());
-				 }
+        String id = in.nextLine();
+        Account a = new Account();
+        a = searchAccount(id);
+		if (a != null)
+		{
+			a.setBalance(a.getBalance());
+	        System.out.println("Current Balance : " + a.getBalance());
+		}
 
 
 
@@ -273,7 +273,7 @@ public class Bank_Manager
 	{
 		for (int j = 0; j < accountCount; j++)
 		{
-			if ( accounts[j].getId().equals("id"))
+			if ( accounts[j].getId().equals(id))
 				return accounts[j];
 		}
 		return null;
