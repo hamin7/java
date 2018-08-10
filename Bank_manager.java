@@ -21,7 +21,8 @@ public class Bank_Manager
 	                  System.out.println("3. Withdraw money");
 	                  System.out.println("4. Send money");
 	                  System.out.println("5. Check balance");
-	                  System.out.println("6. Add interest");
+	                  System.out.println("6. Add interest to certain account");
+	                  System.out.println("7. Add interest to all account");
 	                  System.out.println("0. to quit: \n");
 	                  System.out.print("Enter Your Choice : ");
 	                  userChoice = in.nextInt();
@@ -48,9 +49,12 @@ public class Bank_Manager
 	                	     check_balance();
 	                      break;
 
-	                  case 6: // add interest
+	                  case 6: // add interest to certain account
 	                	     interestFunc();
 	                      break;
+	                  case 7: // add interest to all account
+	                	     interestAllFunc();
+	                	     break;
 	                  case 0:
 	                        quit = true;
 	                        break;
@@ -73,6 +77,20 @@ public class Bank_Manager
 		if(acc != null)
 		{
 			new Thread(new InterestThread(acc)).start();
+		}
+	}
+	
+	private static void interestAllFunc()
+	{
+		
+		for(int j = 0; j < accountCount; j++)
+		{
+			Account acc = new Account();
+			acc = accounts[j];
+			if(acc != null)
+			{
+				new Thread(new InterestThread(acc)).start();
+			}
 		}
 	}
 
