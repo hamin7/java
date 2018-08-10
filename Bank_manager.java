@@ -5,77 +5,73 @@ import java.util.Scanner;
 public class Bank_Manager
 {
 	static Account[] accounts = new Account[100];
-	static int accountCount = 0;     // Account배열의 인덱스랄까
+	static int accountCount = 0;     // Account배열의 인덱스랄까,,,
 
 	public static void main(String args[])
     {
+		Scanner in = new Scanner(System.in);
 
-      Scanner in = new Scanner(System.in);
+	      int userChoice = 0;
+	      boolean quit = false;
 
-      int userChoice = 0;
-      boolean quit = false;
+	      do
+	      {
+	                  System.out.println("1. Create Account");
+	                  System.out.println("2. Deposit money");
+	                  System.out.println("3. Withdraw money");
+	                  System.out.println("4. Send money");
+	                  System.out.println("5. Check balance");
+	                  System.out.println("0. to quit: \n");
+	                  System.out.print("Enter Your Choice : ");
+	                  userChoice = in.nextInt();
 
-      do
-      {
-                  System.out.println("1. Create Account");
-                  System.out.println("2. Deposit money");
-                  System.out.println("3. Withdraw money");
-                  System.out.println("4. Send money");
-                  System.out.println("5. Check balance");
-                  System.out.println("0. to quit: \n");
-                  System.out.print("Enter Your Choice : ");
-                  userChoice = in.nextInt();
+	                  switch (userChoice)
+	                  {
+	                  case 1:     // create_account
+	                	      create_account();
+	                	      break;
 
-                  switch (userChoice)
-                  {
-                  case 1:     // create_account
-                	      create_account();
-                	      break;
+	                	  case 2: // deposite
+	                		  deposite();
+	                		  break;
 
-                	  case 2: // deposite
-                		  deposite();
-                		  break;
+	                  case 3: // withdrawal
+	                	      withdraw();
+	                       break;
 
-                  case 3: // withdrawal
-                	      withdraw();
-                       break;
+	                  case 4 : // send money
+	                	       send();
+	                	       break;
 
-                  case 4 : // send money
-                	       send();
-                	       break;
+	                  case 5: // check balance
+	                	     check_balance();
+	                      break;
 
-                  case 5: // check balance
-                	     check_balance();
-                      break;
+	                  case 6: // add interest
+	                	     interestFunc();
+	                      break;
+	                  case 0:
+	                        quit = true;
+	                        break;
+	                  default:
+	                        System.out.println("Wrong Choice.");
+	                        break;
+	                  }
+	                  System.out.println("\n");
+	            } while (!quit);
+	            System.out.println("Thanks !");
+	            }
 
-                  case 6: // display all info
-                	     //display_balance();
-                      break;
-                  case 0:
-                        quit = true;
-                        break;
-                  default:
-                        System.out.println("Wrong Choice.");
-                        break;
-                  }
-                  System.out.println("\n");
-            } while (!quit);
-            System.out.println("Thanks !");
-            }
-
-	private void interestFunc()
+	private static void interestFunc()
 	{
 		Scanner in = new Scanner(System.in);
 		System.out.print("Write the account number: ");
 		String id = in.nextLine();
 		Account acc = new Account();
 		acc = searchAccount(id);
-		try
+		if(acc != null)
 		{
 			new Thread(new InterestThread(acc)).start();
-		} catch (NullPointerException e)
-		{
-			e.printStackTrace();
 		}
 	}
 
@@ -241,15 +237,15 @@ public class Bank_Manager
 	private static void check_balance()
 	{
 		Scanner in = new Scanner(System.in);
-		System.out.println("Enter your Account Number : ");
-        String id = in.nextLine();
-        Account a = new Account();
-        a = searchAccount(id);
+		 System.out.println("Enter your Account Number : ");
+         String id = in.nextLine();
+         Account a = new Account();
+         a = searchAccount(id);
 		if (a != null)
-		{
-			a.setBalance(a.getBalance());
-	        System.out.println("Current Balance : " + a.getBalance());
-		}
+				 {
+					 a.setBalance(a.getBalance());
+					 System.out.println("Current Balance : " + a.getBalance());
+				 }
 
 
 
