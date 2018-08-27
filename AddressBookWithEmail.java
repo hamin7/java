@@ -11,7 +11,7 @@ public class AddressBookWithEmail extends AddressBook{    //여기도 public 있
 	public void setName(String name) {
 		super.name = name;               // 부모클래스의 필드를 호출. (변수를 이용하는 방법) // 부모 클래스의 멤버 private를 protected로 바꿔주면 가능.
 		System.out.println("******");  
-		//super.setName("name");         // 이게 정석임. 부모클래스의 메소드를 호출. (함수를 이용하는 방법)	
+		//super.setName("name");         // 이게 정석쿠임. 부모클래스의 메소드를 호출. (함수를 이용하는 방법)	
 		System.out.println(name);
 		System.out.println("******");
 	}
