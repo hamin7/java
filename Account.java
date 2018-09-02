@@ -4,7 +4,7 @@ public class Account
 {
     String owner;     //사용자 이름
     private String id;           // 계좌
-    private int balance;      // 잔액
+    private int balance;      // 잔액.
 
     // toString
     @Override
